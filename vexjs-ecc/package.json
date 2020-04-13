@@ -1,0 +1,116 @@
+{
+  "_from": "vexjs-ecc@4.0.6",
+  "_id": "vexjs-ecc@4.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-yJv2UScUT2fZ6WdgLxljnDZK6HaRJE/ZfNZgpTV0IlgdsM0+KFc7RonPFzQp6gmO931fBI9F/p+4prD5e9fNrw==",
+  "_location": "/vexjs-ecc",
+  "_phantomChildren": {
+    "bigi": "1.4.2",
+    "buffer-xor": "1.0.3",
+    "cipher-base": "1.0.4",
+    "evp_bytestokey": "1.0.3",
+    "inherits": "2.0.4",
+    "ripemd160": "2.0.2",
+    "safe-buffer": "5.2.0",
+    "sha.js": "2.4.11"
+  },
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "vexjs-ecc@4.0.6",
+    "name": "vexjs-ecc",
+    "escapedName": "vexjs-ecc",
+    "rawSpec": "4.0.6",
+    "saveSpec": null,
+    "fetchSpec": "4.0.6"
+  },
+  "_requiredBy": [
+    "/",
+    "/vexanium-scatter",
+    "/vexaniumjs",
+    "/vexjs-keygen"
+  ],
+  "_resolved": "https://registry.npmjs.org/vexjs-ecc/-/vexjs-ecc-4.0.6.tgz",
+  "_shasum": "9aedeed5480b30fee4ff17a4118317b3213a303c",
+  "_spec": "vexjs-ecc@4.0.6",
+  "_where": "/Users/xjun/Downloads/vexaniumjs",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/vexanium/vexjs-ecc/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@babel/runtime": "7.4.4",
+    "bigi": "1.4.2",
+    "browserify-aes": "1.0.6",
+    "bs58": "4.0.1",
+    "bytebuffer": "5.0.1",
+    "create-hash": "1.1.3",
+    "create-hmac": "1.1.6",
+    "ecurve": "1.0.5",
+    "randombytes": "2.0.5"
+  },
+  "deprecated": false,
+  "description": "Elliptic curve cryptography functions",
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.4",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "browserify": "16.2.3",
+    "coveralls": "3.0.3",
+    "documentation": "8.1.1",
+    "istanbul": "0.4.5",
+    "mocha": "5.2.0",
+    "nyc": "14.1.0",
+    "terser": "3.17.0"
+  },
+  "files": [
+    "README.md",
+    "docs",
+    "lib"
+  ],
+  "homepage": "https://github.com/vexanium/vexjs-ecc#readme",
+  "keywords": [
+    "ECC",
+    "Private Key",
+    "Public Key",
+    "Signature",
+    "AES",
+    "Encryption",
+    "Decryption"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "vexjs-ecc",
+  "nyc": {
+    "temp-directory": "./coverage/.nyc_output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/vexanium/vexjs-ecc.git"
+  },
+  "scripts": {
+    "build": "yarn build_lib && yarn build_browser",
+    "build_browser": "mkdir -p lib && browserify -o lib/vexjs-ecc.js -s vexjs_ecc lib/index.js",
+    "build_browser_test": "yarn build && browserify -o dist/test.js lib/*.test.js",
+    "build_lib": "rm -f lib/* && babel src --out-dir lib",
+    "coverage": "nyc --reporter=lcov --reporter=text npm test",
+    "coveralls": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "docs": "yarn documentation -- readme src/api_common.js --section \"Common API\" --shallow",
+    "documentation": "node_modules/documentation/bin/documentation.js",
+    "minimize": "terser lib/vexjs-ecc.js -o lib/vexjs-ecc.min.js --source-map --compress --mangle",
+    "prepublishOnly": "yarn build && yarn minimize && yarn test_lib && yarn docs && yarn srisum",
+    "srisum": "npx srisum lib/vexjs-ecc.*",
+    "test": "mocha --use_strict src/*.test.js",
+    "test_lib": "mocha --use_strict lib/*.test.js"
+  },
+  "version": "4.0.6"
+}

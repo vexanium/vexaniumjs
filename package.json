@@ -1,0 +1,12 @@
+{
+  "name": "vexaniumjs",
+  "version": "0.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "vexaniumjs": "16.0.13",
+    "vexjs-ecc": "4.0.6",
+    "vexjs-keygen": "1.3.7",
+    "vexjs-api": "7.0.5",
+    "vexanium-scatter": "1.0.6"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "_from": "vexjs-api@7.0.5",
+  "_id": "vexjs-api@7.0.5",
+  "_inBundle": false,
+  "_integrity": "sha512-qa3y5BsXKbACNegOB0BaG4KOQ01vFE4JrL+FBkYJwO3q/2eRN1umOOFp9SYPh6bS6s3e/yZCpwCY/LKXLUPBSw==",
+  "_location": "/vexjs-api",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "vexjs-api@7.0.5",
+    "name": "vexjs-api",
+    "escapedName": "vexjs-api",
+    "rawSpec": "7.0.5",
+    "saveSpec": null,
+    "fetchSpec": "7.0.5"
+  },
+  "_requiredBy": [
+    "/",
+    "/vexaniumjs"
+  ],
+  "_resolved": "https://registry.npmjs.org/vexjs-api/-/vexjs-api-7.0.5.tgz",
+  "_shasum": "aa015dfa887d0937db538620086ca8ea5bdc0e47",
+  "_spec": "vexjs-api@7.0.5",
+  "_where": "/Users/xjun/Downloads/vexaniumjs",
+  "author": "",
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/vexanium/vexjs-api/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "camel-case": "^3.0.0",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "deprecated": false,
+  "description": "Application programming interface to VEX blockchain nodes.",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.3",
+    "babel-preset-es2015": "6.24.1",
+    "bluebird": "3.5.0",
+    "browserify": "16.2.2",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^5.2.0",
+    "uglify-js": "3.4.5"
+  },
+  "files": [
+    "README.md",
+    "docs",
+    "lib"
+  ],
+  "homepage": "https://github.com/vexanium/vexjs-api#readme",
+  "keywords": [
+    "VEX",
+    "Blockchain",
+    "API"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "vexjs-api",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vexanium/vexjs-api.git"
+  },
+  "scripts": {
+    "apiDocs": "./bin/api-docs.js > lib/api-jsdocs.js && jsdoc2md lib/api-jsdocs.js > docs/api.md",
+    "build": "npm run build_lib && npm run build_browser",
+    "build_browser": "mkdir -p lib && browserify -o lib/eos-api.js -s EosApi lib/index.js",
+    "build_browser_test": "npm run build && browserify -o dist/test.js lib/*.test.js",
+    "build_lib": "rm -fr lib/* && babel --copy-files src --out-dir lib",
+    "coverage": "istanbul cover _mocha -- -R spec src/**/*.test.js",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "docs": "npm run apiDocs && npm run helperDocs",
+    "helperDocs": "jsdoc2md src/exported-helpers.js src/process-args.js > docs/index.md",
+    "minimize": "uglifyjs lib/eos-api.js -o lib/eos-api.min.js --source-map --compress --mangle",
+    "prepublishOnly": "npm run build && npm run test_lib && npm run minimize && npm run docs && npm run srisum",
+    "srisum": "npx srisum lib/eos-api.*",
+    "test": "mocha --use_strict src/**/*.test.js",
+    "test_lib": "mocha --use_strict lib/*.test.js"
+  },
+  "version": "7.0.5"
+}

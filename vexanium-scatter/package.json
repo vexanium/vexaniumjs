@@ -1,0 +1,70 @@
+{
+  "_from": "vexanium-scatter@1.0.6",
+  "_id": "vexanium-scatter@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha512-Rhir0BOczfMfeBCXkEoFrVs6Jf794yzloy6L6Sx0/jBrQFmFhe8F6GHiSWB3e4pq9HekSx/4fr15cy0nuAFdPA==",
+  "_location": "/vexanium-scatter",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "vexanium-scatter@1.0.6",
+    "name": "vexanium-scatter",
+    "escapedName": "vexanium-scatter",
+    "rawSpec": "1.0.6",
+    "saveSpec": null,
+    "fetchSpec": "1.0.6"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/vexanium-scatter/-/vexanium-scatter-1.0.6.tgz",
+  "_shasum": "2eda47f46096d08f4cf39645bb76d2e3128490d0",
+  "_spec": "vexanium-scatter@1.0.6",
+  "_where": "/Users/xjun/Downloads/vexaniumjs",
+  "author": {
+    "name": "nsjames"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "bip39": "^2.5.0",
+    "create-hash": "^1.1.3",
+    "crypto-js": "^3.1.9-1",
+    "scatterdapp": "^1.0.0",
+    "scattermodels": "^1.0.6",
+    "vexaniumjs": "16.0.13",
+    "vexjs-ecc": "^4.0.6",
+    "vexjs-keygen": "1.3.7",
+    "vue": "^2.5.13",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
+  "deprecated": false,
+  "description": "VEX Wallet & Bridge",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.8",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.4",
+    "ignore-emit-webpack-plugin": "^0.2.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "zip-webpack-plugin": "^2.1.0"
+  },
+  "license": "MIT",
+  "main": "main.js",
+  "name": "vexanium-scatter",
+  "scripts": {
+    "dev": "webpack --watch"
+  },
+  "url": "https://github.com/nsjames/Scatter",
+  "version": "1.0.6"
+}
